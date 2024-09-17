@@ -6,24 +6,24 @@ import java.util.List;
 public class EratosthenesPrimeSieve implements PrimeSieve{
 
 
-    private List<Integer> numberList;
+    private boolean[] numberList;
 
     public EratosthenesPrimeSieve(int p) {
-        for (int i = 2; i < p; i++) {
-            numberList.add(i);
+        numberList = new boolean[p];
+        for (int i = 0; i < numberList.length; i++) {
+            numberList[i] = true;
         }
-
     }
 
     @Override
     public boolean isPrime(int p) {
-        return numberList.contains(p);
+        return numberList[p];
     }
 
     @Override
     public void printPrimes() {
-        for (int number : numberList) {
-            if (isPrime(number)) System.out.println(number);
+        for (int i = 0; i < numberList.length; i++) {
+            if (numberList[i]) System.out.println(i);
         }
     }
 }
