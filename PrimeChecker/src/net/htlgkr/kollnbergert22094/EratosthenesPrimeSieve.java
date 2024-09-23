@@ -16,7 +16,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         for (int i = 2; i < numberList.length; i++) {
             if (numberList[i]) {
                 for (int j = i * i; j < numberList.length; j += i) {
-                    numberList[i] = false;
+                    numberList[j] = false;
                 }
             }
         }
